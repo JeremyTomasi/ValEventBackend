@@ -61,4 +61,8 @@ public class EventService {
     public void removeFavourite(int memberId, int eventId){
         eventLikedRepository.removeEventLikedByMemberIdAndEventId(memberId,eventId);
     }
+
+    public Iterable<Event> getEventsByAssoId(int assoId){
+        return eventRepository.getEventsByAssoOrganizer(assoId);
+    }
 }
