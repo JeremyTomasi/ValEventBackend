@@ -1,7 +1,7 @@
-package fr.jtomasi.feveventbackend.service;
+package fr.jtomasi.feveventbackend.api.service;
 
-import fr.jtomasi.feveventbackend.model.User;
-import fr.jtomasi.feveventbackend.repository.UserRepository;
+import fr.jtomasi.feveventbackend.api.model.User;
+import fr.jtomasi.feveventbackend.api.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 @Service

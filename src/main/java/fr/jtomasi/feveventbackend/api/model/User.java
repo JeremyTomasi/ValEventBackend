@@ -1,4 +1,4 @@
-package fr.jtomasi.feveventbackend.model;
+package fr.jtomasi.feveventbackend.api.model;
 
 import lombok.Data;
 

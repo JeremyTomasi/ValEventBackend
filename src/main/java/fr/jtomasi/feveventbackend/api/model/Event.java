@@ -1,4 +1,4 @@
-package fr.jtomasi.feveventbackend.model;
+package fr.jtomasi.feveventbackend.api.model;
 
 import lombok.Data;
 
@@ -21,6 +21,7 @@ public class Event {
 
     private String date;
 
+    @Column(name = "asso_organizer1_id")
     private int assoOrganizer1Id;
 
     public Event(String name,String date, String description,String posterUrl, int assoOrganizer1){

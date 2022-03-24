@@ -1,6 +1,6 @@
-package fr.jtomasi.feveventbackend.repository;
+package fr.jtomasi.feveventbackend.api.repository;
 
-import fr.jtomasi.feveventbackend.model.Asso;
+import fr.jtomasi.feveventbackend.api.model.Asso;
 import org.springframework.data.repository.CrudRepository;
 
 public interface AssoRepository extends CrudRepository<Asso,Integer> {

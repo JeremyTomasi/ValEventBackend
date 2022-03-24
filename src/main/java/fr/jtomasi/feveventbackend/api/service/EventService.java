@@ -1,9 +1,9 @@
-package fr.jtomasi.feveventbackend.service;
+package fr.jtomasi.feveventbackend.api.service;
 
-import fr.jtomasi.feveventbackend.model.Event;
-import fr.jtomasi.feveventbackend.model.EventLiked;
-import fr.jtomasi.feveventbackend.repository.EventLikedRepository;
-import fr.jtomasi.feveventbackend.repository.EventRepository;
+import fr.jtomasi.feveventbackend.api.model.Event;
+import fr.jtomasi.feveventbackend.api.model.EventLiked;
+import fr.jtomasi.feveventbackend.api.repository.EventLikedRepository;
+import fr.jtomasi.feveventbackend.api.repository.EventRepository;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,7 +1,7 @@
-package fr.jtomasi.feveventbackend.service;
+package fr.jtomasi.feveventbackend.api.service;
 
-import fr.jtomasi.feveventbackend.model.Asso;
-import fr.jtomasi.feveventbackend.repository.AssoRepository;
+import fr.jtomasi.feveventbackend.api.model.Asso;
+import fr.jtomasi.feveventbackend.api.repository.AssoRepository;
 import org.springframework.stereotype.Service;
 
 @Service

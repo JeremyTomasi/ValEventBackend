@@ -1,6 +1,6 @@
-package fr.jtomasi.feveventbackend.repository;
+package fr.jtomasi.feveventbackend.api.repository;
 
-import fr.jtomasi.feveventbackend.model.EventLiked;
+import fr.jtomasi.feveventbackend.api.model.EventLiked;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
