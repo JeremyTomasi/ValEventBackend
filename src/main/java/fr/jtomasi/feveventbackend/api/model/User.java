@@ -5,6 +5,9 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+/**
+ * Classe permettant de représenter un utilisateur
+ */
 @Entity
 @Table(name = "users")
 @Data

@@ -4,6 +4,9 @@ import lombok.Data;
 
 import javax.persistence.*;
 
+/**
+ * Classe permettant de représenter un événement
+ */
 @Entity
 @Table(name = "events")
 @Data

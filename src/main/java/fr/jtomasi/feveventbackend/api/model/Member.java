@@ -4,6 +4,9 @@ import lombok.Data;
 
 import javax.persistence.*;
 
+/**
+ * Classe permettant de représenter un membre
+ */
 @Entity
 @Data
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)

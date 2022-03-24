@@ -5,6 +5,9 @@ import lombok.Data;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+/**
+ * Classe permettant de représenter une association
+ */
 @Entity
 @Table(name = "assos")
 @Data

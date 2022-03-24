@@ -32,6 +32,12 @@ public class UserController {
         return userService.getUserById(id);
     }
 
+    /**
+     * Permet de récupérer les informations d'un utilisateur selon son email
+     * @param email L'email de l'utilisateur
+     * @return Un objet JSON avec les informations de l'utilisateur ou un objet JSON vide si l'utilisateur est
+     * introuvable
+     */
     @RequestMapping(value = "/user/email/{email}",method = RequestMethod.GET)
     public User getUserByEmail(@PathVariable String email){
         return userService.getUserByEmail(email);
@@ -49,8 +55,15 @@ public class UserController {
         userService.addUser(user);
     }
 
+    /**
+     * Permet de mettre à jour un utilisateur
+     * @param id L'id de l'utilisateur à mettre à jour
+     * @param name Le nom de l'utilisateur mis à jour
+     * @param firstName Le prénom de l'utilisateur mis à jour
+     * @param email L'email de l'utilisateur mis à jour
+     */
     @PostMapping("/user/update/{id}")
-    public void updateUser(@PathVariable("id") int id, @RequestParam String name, @RequestParam String firstName, @RequestParam String email){
-        userService.updateUser(id,name,firstName,email);
+    public void updateUser(@PathVariable("id") int id, @RequestParam String name, @RequestParam String firstName, @RequestParam String email, @RequestParam String profilePicLink){
+        userService.updateUser(id,name,firstName,email,profilePicLink);
     }
 }

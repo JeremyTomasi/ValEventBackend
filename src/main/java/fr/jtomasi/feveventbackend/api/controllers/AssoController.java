@@ -32,6 +32,11 @@ public class AssoController {
         return assoService.getAssoById(id);
     }
 
+    /**
+     * Permet de récupérer une association selon son email
+     * @param email L'email de l'asso dont on veut récupérer les informations
+     * @return L'asso correspondante à l'adresse mail, null sinon
+     */
     @RequestMapping(value = "/asso/email/{email}", method = RequestMethod.GET)
     public Asso getAssoWithEmail(@PathVariable String email){
         return assoService.getAssoByEmail(email);
@@ -48,10 +53,16 @@ public class AssoController {
         assoService.addAsso(asso);
     }
 
+    /**
+     * Permet de mettre à jour une association
+     * @param id L'id de l'association dans la BDD
+     * @param name Le nom de l'association mise à jour
+     * @param email L'email de l'association mise à jour
+     * @param description La description de l'association mise à jour
+     */
     @PostMapping("/asso/update/{id}")
-    public void updateAsso(@PathVariable int id, @RequestParam String name, @RequestParam String email, @RequestParam String description){
-        assoService.updateAsso(id,name,email,description);
+    public void updateAsso(@PathVariable int id, @RequestParam String name, @RequestParam String email, @RequestParam String description, @RequestParam String profilePicLink){
+        assoService.updateAsso(id,name,email,description,profilePicLink);
     }
-
 
 }
