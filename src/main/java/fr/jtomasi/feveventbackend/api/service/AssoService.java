@@ -2,15 +2,16 @@ package fr.jtomasi.feveventbackend.api.service;
 
 import fr.jtomasi.feveventbackend.api.model.Asso;
 import fr.jtomasi.feveventbackend.api.repository.AssoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AssoService {
+public class AssoService{
 
-    private final AssoRepository assoRepository;
+    private AssoRepository assoRepository;
 
-    public AssoService(AssoRepository assoRepository) {
-        this.assoRepository = assoRepository;
+    public AssoService(AssoRepository repository){
+        assoRepository = repository;
     }
 
     /**
@@ -58,11 +59,23 @@ public class AssoService {
     public void updateAsso(int id, String name, String email, String description, String profilePicLink){
         Asso asso = assoRepository.findAssoById(id);
         if(asso != null){
-            asso.setName(name);
-            asso.setEmail(email);
-            asso.setDescription(description);
-            asso.setProfilePicLink(profilePicLink);
+            if(name != null){
+                asso.setName(name);
+            }
+            if(email != null){
+                asso.setEmail(email);
+            }
+            if(description != null){
+                asso.setDescription(description);
+            }
+            if(profilePicLink != null){
+                asso.setProfilePicLink(profilePicLink);
+            }
             assoRepository.save(asso);
         }
+    }
+
+    public Asso getAssoByOrganizerId(int assoId){
+        return assoRepository.findAssoById(assoId);
     }
 }

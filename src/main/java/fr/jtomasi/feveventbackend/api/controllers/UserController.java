@@ -50,7 +50,10 @@ public class UserController {
      * @param firstName Le prénom de l'utilisateur (optionel dans le cas d'une association)
      */
     @PutMapping("/user/add")
-    public void insertUser(@RequestParam String name, @RequestParam String firstName, @RequestParam String email, @RequestParam String profilePicLink){
+    public void insertUser(@RequestParam String name,
+                           @RequestParam String firstName,
+                           @RequestParam String email,
+                           @RequestParam String profilePicLink){
         User user = new User(name,firstName,email,profilePicLink);
         userService.addUser(user);
     }
@@ -63,7 +66,11 @@ public class UserController {
      * @param email L'email de l'utilisateur mis à jour
      */
     @PostMapping("/user/update/{id}")
-    public void updateUser(@PathVariable("id") int id, @RequestParam String name, @RequestParam String firstName, @RequestParam String email, @RequestParam String profilePicLink){
+    public void updateUser(@PathVariable("id") int id,
+                           @RequestParam(required = false) String name,
+                           @RequestParam(required = false) String firstName,
+                           @RequestParam(required = false) String email,
+                           @RequestParam(required = false) String profilePicLink){
         userService.updateUser(id,name,firstName,email,profilePicLink);
     }
 }

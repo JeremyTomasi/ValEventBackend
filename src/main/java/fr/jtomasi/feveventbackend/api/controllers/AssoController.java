@@ -48,7 +48,10 @@ public class AssoController {
      * @param email L'email qui va être associé au compte de l'association
      */
     @PutMapping("/asso/add")
-    public void insertAsso(@RequestParam String name, @RequestParam String email,@RequestParam String description, @RequestParam String profilePicLink){
+    public void insertAsso(@RequestParam String name,
+                           @RequestParam String email,
+                           @RequestParam String description,
+                           @RequestParam String profilePicLink){
         Asso asso = new Asso(name,email,description,profilePicLink);
         assoService.addAsso(asso);
     }
@@ -61,7 +64,11 @@ public class AssoController {
      * @param description La description de l'association mise à jour
      */
     @PostMapping("/asso/update/{id}")
-    public void updateAsso(@PathVariable int id, @RequestParam String name, @RequestParam String email, @RequestParam String description, @RequestParam String profilePicLink){
+    public void updateAsso(@PathVariable int id,
+                           @RequestParam(required = false) String name,
+                           @RequestParam(required = false) String email,
+                           @RequestParam(required = false) String description,
+                           @RequestParam(required = false) String profilePicLink){
         assoService.updateAsso(id,name,email,description,profilePicLink);
     }
 

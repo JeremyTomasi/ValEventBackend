@@ -1,6 +1,9 @@
 package fr.jtomasi.feveventbackend.api.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -10,13 +13,20 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "assos")
-@Data
+@Getter
+@Setter
 public class Asso extends Member {
 
     private String description;
 
     public Asso(String name, String email,String description, String profilePicLink){
         super(name,email,profilePicLink);
+        this.description = description;
+    }
+
+    public Asso(int id,String name, String email,String description, String profilePicLink){
+        super(name,email,profilePicLink);
+        super.setId(id);
         this.description = description;
     }
 

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class EventController {
+
     private EventService eventService;
 
     public EventController(EventService eventService){
@@ -40,7 +41,11 @@ public class EventController {
      * @param posterUrl Le lien de l'affiche de l'événement mise à jour
      */
     @PostMapping("/event/update/{id}")
-    public void updateEvent(@PathVariable int id, @RequestParam String name, @RequestParam String date, @RequestParam String description, @RequestParam String posterUrl){
+    public void updateEvent(@PathVariable int id,
+                            @RequestParam(required = false) String name,
+                            @RequestParam(required = false) String date,
+                            @RequestParam(required = false) String description,
+                            @RequestParam(required = false) String posterUrl){
         eventService.updateEvent(id,name,date,description,posterUrl);
     }
 
@@ -64,7 +69,11 @@ public class EventController {
      * @param assoOrganizerId L'id de l'association organisatrice
      */
     @PutMapping("/event/add")
-    public void addEvent(@RequestParam String name, @RequestParam String date, @RequestParam String description,@RequestParam String posterUrl, @RequestParam int assoOrganizerId){
+    public void addEvent(@RequestParam String name,
+                         @RequestParam String date,
+                         @RequestParam String description,
+                         @RequestParam String posterUrl,
+                         @RequestParam int assoOrganizerId){
         Event event = new Event(name,date,description,posterUrl,assoOrganizerId);
         eventService.addEvent(event);
     }

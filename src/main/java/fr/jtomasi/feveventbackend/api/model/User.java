@@ -20,5 +20,11 @@ public class User extends Member{
         this.firstName = firstName;
     }
 
+    public User(int id,String lastName, String firstName, String email, String profilePicLink){
+        super(lastName,email,profilePicLink);
+        super.setId(id);
+        this.firstName = firstName;
+    }
+
     public User() {}
 }

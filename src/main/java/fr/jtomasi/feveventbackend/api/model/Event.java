@@ -35,5 +35,14 @@ public class Event {
         this.posterUrl = posterUrl;
     }
 
+    public Event(int id,String name,String date, String description,String posterUrl, int assoOrganizer1){
+        this.id = id;
+        this.name = name;
+        this.date = date;
+        this.description = description;
+        this.assoOrganizer1Id = assoOrganizer1;
+        this.posterUrl = posterUrl;
+    }
+
     public Event() {}
 }

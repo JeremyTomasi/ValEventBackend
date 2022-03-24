@@ -17,6 +17,12 @@ public class EventService {
         this.eventLikedRepository = eventLikedRepository;
     }
 
+    public EventService(EventRepository eventRepository){
+        this.eventRepository = eventRepository;
+    }
+
+    public EventService(){}
+
     /**
      * Récupère les informations d'un événement via son ID
      * @param id L'id de l'événement
@@ -53,10 +59,18 @@ public class EventService {
     public void updateEvent(int id, String name, String date, String description, String posterUrl){
         Event event = eventRepository.getEventById(id);
         if(event != null){
-            event.setName(name);
-            event.setDate(date);
-            event.setDescription(description);
-            event.setPosterUrl(posterUrl);
+            if(name != null){
+                event.setName(name);
+            }
+            if(date != null){
+                event.setDate(date);
+            }
+            if(description != null){
+                event.setDescription(description);
+            }
+            if(posterUrl != null){
+                event.setPosterUrl(posterUrl);
+            }
 
             eventRepository.save(event);
         }

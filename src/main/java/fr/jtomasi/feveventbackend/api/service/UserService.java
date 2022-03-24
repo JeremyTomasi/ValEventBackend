@@ -56,10 +56,18 @@ public class UserService {
     public void updateUser(int id, String name, String firstName, String email, String profilePicLink){
         User user = userRepository.findById(id);
         if(user != null){
-            user.setName(name);
-            user.setFirstName(firstName);
-            user.setEmail(email);
-            user.setProfilePicLink(profilePicLink);
+            if(name != null){
+                user.setName(name);
+            }
+            if(firstName != null){
+                user.setFirstName(firstName);
+            }
+            if(email != null){
+                user.setEmail(email);
+            }
+            if(profilePicLink != null){
+                user.setProfilePicLink(profilePicLink);
+            }
             userRepository.save(user);
         }
     }
