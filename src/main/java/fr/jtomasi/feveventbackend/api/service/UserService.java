@@ -2,10 +2,13 @@ package fr.jtomasi.feveventbackend.api.service;
 
 import fr.jtomasi.feveventbackend.api.model.User;
 import fr.jtomasi.feveventbackend.api.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
+
+    @Autowired
     private final UserRepository userRepository;
 
     public UserService(UserRepository userRepository){

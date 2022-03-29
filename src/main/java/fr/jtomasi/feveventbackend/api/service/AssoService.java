@@ -8,7 +8,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class AssoService{
 
-    private AssoRepository assoRepository;
+    @Autowired
+    private final AssoRepository assoRepository;
 
     public AssoService(AssoRepository repository){
         assoRepository = repository;

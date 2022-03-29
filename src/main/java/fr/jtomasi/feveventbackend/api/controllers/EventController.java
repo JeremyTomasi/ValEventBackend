@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class EventController {
 
-    private EventService eventService;
+    private final EventService eventService;
 
     public EventController(EventService eventService){
         this.eventService = eventService;
@@ -96,17 +96,6 @@ public class EventController {
     @GetMapping("/events/favourites/{memberId}")
     public Iterable<Event> getEventsLikedByMemberId(@PathVariable int memberId){
         return eventService.getEventsLikedByMemberId(memberId);
-    }
-
-    /**
-     * Permet de récupérer un événement selon l'identifiant du membre et l'identifiant de l'événement
-     * @param memberId L'identifiant du membre
-     * @param eventId L'identifiant de l'événement
-     * @return L'événement selon l'identifiant du membre et de l'événement, null sinon
-     */
-    @GetMapping("/events/favourite/{memberId}/{eventId}")
-    public Event getEventByMemberIdAndEventId(@PathVariable int memberId, @PathVariable int eventId){
-        return eventService.getEventByMemberIdAndEventId(memberId,eventId);
     }
 
     /**

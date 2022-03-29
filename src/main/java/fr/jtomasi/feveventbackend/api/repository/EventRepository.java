@@ -13,7 +13,4 @@ public interface EventRepository extends CrudRepository<Event,Integer> {
 
     @Query(value = "select events.* from events, event_liked where event_liked.member_id = :memberId and events.id = event_liked.event_id",nativeQuery = true)
     Iterable<Event> getEventsLikedByMemberId(int memberId);
-
-    @Query(value = "select events.* from events, event_liked where event_liked.member_id = :memberId and events.id = event_liked.event_id and events.id = :eventId",nativeQuery = true)
-    public Event getEventByMemberIdAndEventId(@Param("memberId") int memberId,@Param("eventId") int eventId);
 }

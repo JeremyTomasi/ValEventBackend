@@ -4,12 +4,16 @@ import fr.jtomasi.feveventbackend.api.model.Event;
 import fr.jtomasi.feveventbackend.api.model.EventLiked;
 import fr.jtomasi.feveventbackend.api.repository.EventLikedRepository;
 import fr.jtomasi.feveventbackend.api.repository.EventRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class EventService {
 
+    @Autowired
     private EventRepository eventRepository;
+
+    @Autowired
     private EventLikedRepository eventLikedRepository;
 
     public EventService(EventRepository eventRepository, EventLikedRepository eventLikedRepository){
@@ -102,16 +106,6 @@ public class EventService {
      */
     public Iterable<Event> getEventsLikedByMemberId(int memberId){
         return eventRepository.getEventsLikedByMemberId(memberId);
-    }
-
-    /**
-     * Récupère l'événement selon l'identifiant de l'événement et du membre
-     * @param memberId L'ID du membre
-     * @param eventId L'ID de l'événement
-     * @return Les infos de l'événement, null si l'événement est introuvable
-     */
-    public Event getEventByMemberIdAndEventId(int memberId, int eventId){
-        return eventRepository.getEventByMemberIdAndEventId(memberId,eventId);
     }
 
     /**
