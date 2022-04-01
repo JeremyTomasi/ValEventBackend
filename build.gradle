@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'fr.jtomasi'
-version = 'v1.0.1'
+version = 'v1.0.0'
 sourceCompatibility = '11'
 
 configurations {
@@ -25,7 +25,7 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testRuntimeOnly 'com.h2database:h2'
-    runtimeOnly 'org.postgresql:postgresql'
+    implementation 'org.postgresql:postgresql'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
