@@ -17,7 +17,7 @@ public class EventController {
      * Permet de récupérer la liste de tous les événements
      * @return La liste des événements au format JSON
      */
-    @GetMapping("/events")
+    @GetMapping("/api/events")
     public Iterable<Event> getAllEvents(){
         return eventService.getEvents();
     }
@@ -27,7 +27,7 @@ public class EventController {
      * @param asso_id L'id de l'association dont on veut récupérer les événements
      * @return La liste des événements de l'association
      */
-    @GetMapping("/events/asso/id/{asso_id}")
+    @GetMapping("/api/events/asso/id/{asso_id}")
     public Iterable<Event> getEventsByAssoId(@PathVariable int asso_id) {
         return eventService.getEventsByAssoOrganizer(asso_id);
     }
@@ -40,7 +40,7 @@ public class EventController {
      * @param description La description de l'événement mise à jour
      * @param posterUrl Le lien de l'affiche de l'événement mise à jour
      */
-    @PostMapping("/event/update/{id}")
+    @PostMapping("/api/event/update/{id}")
     public void updateEvent(@PathVariable int id,
                             @RequestParam(required = false) String name,
                             @RequestParam(required = false) String date,
@@ -55,7 +55,7 @@ public class EventController {
      * @return Un objet JSON avec les informations de l'utilisateur ou un objet JSON vide si l'utilisateur est
      * introuvable
      */
-    @RequestMapping(value = "/event/id/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/api/event/id/{id}",method = RequestMethod.GET)
     public Event getEventById(@PathVariable int id){
         return eventService.getEventById(id);
     }
@@ -68,7 +68,7 @@ public class EventController {
      * @param posterUrl Le lien de l'affiche de l'événement
      * @param assoOrganizerId L'id de l'association organisatrice
      */
-    @PutMapping("/event/add")
+    @PutMapping("/api/event/add")
     public void addEvent(@RequestParam String name,
                          @RequestParam String date,
                          @RequestParam String description,
@@ -83,7 +83,7 @@ public class EventController {
      * @param eventId L'identifiant de l'événement
      * @param memberId L'identifiant du membre
      */
-    @PutMapping("/event/add_favourite")
+    @PutMapping("/api/event/add_favourite")
     public void addFavourite(@RequestParam int eventId, @RequestParam int memberId){
         eventService.addFavourite(eventId,memberId);
     }
@@ -93,7 +93,7 @@ public class EventController {
      * @param memberId L'identifiant du membre
      * @return La liste des événements favori du membre
      */
-    @GetMapping("/events/favourites/{memberId}")
+    @GetMapping("/api/events/favourites/{memberId}")
     public Iterable<Event> getEventsLikedByMemberId(@PathVariable int memberId){
         return eventService.getEventsLikedByMemberId(memberId);
     }
@@ -103,7 +103,7 @@ public class EventController {
      * @param eventId L'identifiant de l'événement
      * @param memberId L'identifiant du membre
      */
-    @DeleteMapping("/events/remove_favourite/{eventId}/{memberId}")
+    @DeleteMapping("/api/events/remove_favourite/{eventId}/{memberId}")
     public void removeFavourite(@PathVariable int eventId, @PathVariable int memberId){
         eventService.removeFavourite(memberId,eventId);
     }
