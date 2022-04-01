@@ -1,0 +1,32 @@
+---
+- name: Récupération des infos de Github
+  import_playbook: github.yml
+
+- name: Installation de l'environnement
+  hosts: all
+  tasks:
+    - name: Installation de PostgresSQL
+      become: true
+      apt:
+        name: postgresql-13
+    
+    - name: Installation de Java
+      become: true
+      apt:
+        name: openjdk-17-jre
+    
+    - name: Creation du dossier FevEventBackend
+      shell:
+        cmd: mkdir -p /home/jeremy/FevEventBackend
+
+    - name: Déplacement du fichier Jar
+      shell:
+        cmd: "mv /tmp/FevEventBackend/build/libs/FevEventBackend-{{ version_release.tag }}.jar /home/jeremy/FevEventBackend.jar"
+
+    - name: Suppression du fichier assets_response
+      shell:
+        cmd: rm -rf /tmp/assets_response
+    
+    - name: Suppression des fichiers dans le dossier temporaire
+      shell:
+        cmd: rm -rf /tmp/FevEventBackend*
