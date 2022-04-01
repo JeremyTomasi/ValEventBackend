@@ -1,9 +1,12 @@
-package fr.jtomasi.feveventbackend.model;
+package fr.jtomasi.feveventbackend.api.model;
 
 import lombok.Data;
 
 import javax.persistence.*;
 
+/**
+ * Classe représentant un événement favori
+ */
 @Entity
 @Table(name = "event_liked")
 @Data
