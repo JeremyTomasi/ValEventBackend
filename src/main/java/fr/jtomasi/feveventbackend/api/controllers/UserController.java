@@ -16,7 +16,7 @@ public class UserController {
      * Permet de récupérer la liste de tous les utilisateurs inscrits
      * @return La liste des utilisateurs inscrits au format JSON
      */
-    @GetMapping("/users")
+    @GetMapping("/api/users")
     public Iterable<User> getAllUsers(){
         return userService.getUsers();
     }
@@ -27,7 +27,7 @@ public class UserController {
      * @return Un objet JSON avec les informations de l'utilisateur ou un objet JSON vide si l'utilisateur est
      * introuvable
      */
-    @RequestMapping(value = "/user/id/{id}",method = RequestMethod.GET)
+    @RequestMapping(value = "/api/user/id/{id}",method = RequestMethod.GET)
     public User getUserWithId(@PathVariable int id){
         return userService.getUserById(id);
     }
@@ -38,7 +38,7 @@ public class UserController {
      * @return Un objet JSON avec les informations de l'utilisateur ou un objet JSON vide si l'utilisateur est
      * introuvable
      */
-    @RequestMapping(value = "/user/email/{email}",method = RequestMethod.GET)
+    @RequestMapping(value = "/api/user/email/{email}",method = RequestMethod.GET)
     public User getUserByEmail(@PathVariable String email){
         return userService.getUserByEmail(email);
     }
@@ -49,7 +49,7 @@ public class UserController {
      * @param email L'email qui va être associé au compte
      * @param firstName Le prénom de l'utilisateur (optionel dans le cas d'une association)
      */
-    @PutMapping("/user/add")
+    @PutMapping("/api/user/add")
     public void insertUser(@RequestParam String name,
                            @RequestParam String firstName,
                            @RequestParam String email,
@@ -65,7 +65,7 @@ public class UserController {
      * @param firstName Le prénom de l'utilisateur mis à jour
      * @param email L'email de l'utilisateur mis à jour
      */
-    @PostMapping("/user/update/{id}")
+    @PostMapping("/api/user/update/{id}")
     public void updateUser(@PathVariable("id") int id,
                            @RequestParam(required = false) String name,
                            @RequestParam(required = false) String firstName,
