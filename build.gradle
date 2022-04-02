@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'fr.jtomasi'
-version = 'v1.0.0'
+version = 'v1.0.1-rc'
 sourceCompatibility = '11'
 
 configurations {
