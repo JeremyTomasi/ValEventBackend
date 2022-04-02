@@ -1,0 +1,55 @@
+---
+- name: Get Github last release
+  hosts: all
+  tasks:
+    - name: Installation de pip3
+      become: true
+      apt:
+        name: python3-pip
+
+    - name: Installation de github3.py
+      pip:
+        name: github3.py
+
+    - name: Installation de jq
+      become: true
+      apt:
+        name: jq
+    
+    - name: Recupération des assets
+      uri:
+        url: https://api.github.com/repos/JeremyTomasi/FevEventBackend/releases/latest
+        headers:
+          Accept: application/vnd.github.v3+json
+        return_content: true
+        dest: /tmp/assets_response
+      register: assets_details
+    
+    - name: Récupération de l'URL de download
+      shell: |
+        cat /tmp/assets_response | jq '.assets | .[] | select(.browser_download_url) | .url' | sed -e 's/^"//' -e 's/"$//'
+      register: download_url
+
+    - name: Récupération de la version de la release
+      community.general.github_release:
+        user: JeremyTomasi
+        repo: FevEventBackend
+        action: latest_release
+      register: version_release
+
+    - name: Download de la release
+      uri:
+        url: "{{ download_url.stdout }}"
+        dest: /tmp/FevEventBackend-latest.jar.tgz
+        headers:
+          Accept: "application/octet-stream"
+
+    - name: Creation du dossier FevEventBackend
+      shell:
+        cmd: mkdir -p /tmp/FevEventBackend
+
+    - name: Extraction de la release
+      unarchive:
+        src: /tmp/FevEventBackend-latest.jar.tgz
+        dest: /tmp/FevEventBackend
+        remote_src: yes
