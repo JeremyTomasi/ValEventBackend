@@ -1,7 +1,7 @@
-package fr.jtomasi.feveventbackend.api.service;
+package fr.jtomasi.valeventbackend.api.service;
 
-import fr.jtomasi.feveventbackend.api.model.User;
-import fr.jtomasi.feveventbackend.api.repository.UserRepository;
+import fr.jtomasi.valeventbackend.api.model.User;
+import fr.jtomasi.valeventbackend.api.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

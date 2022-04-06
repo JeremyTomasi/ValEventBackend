@@ -1,8 +1,8 @@
-package fr.jtomasi.feveventbackend;
+package fr.jtomasi.valeventbackend;
 
-import fr.jtomasi.feveventbackend.api.model.User;
-import fr.jtomasi.feveventbackend.api.repository.UserRepository;
-import fr.jtomasi.feveventbackend.api.service.UserService;
+import fr.jtomasi.valeventbackend.api.model.User;
+import fr.jtomasi.valeventbackend.api.repository.UserRepository;
+import fr.jtomasi.valeventbackend.api.service.UserService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

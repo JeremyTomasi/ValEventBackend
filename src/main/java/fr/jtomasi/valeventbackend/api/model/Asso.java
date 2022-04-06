@@ -1,4 +1,4 @@
-package fr.jtomasi.feveventbackend.api.model;
+package fr.jtomasi.valeventbackend.api.model;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,6 +1,6 @@
-package fr.jtomasi.feveventbackend.api.repository;
+package fr.jtomasi.valeventbackend.api.repository;
 
-import fr.jtomasi.feveventbackend.api.model.User;
+import fr.jtomasi.valeventbackend.api.model.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 

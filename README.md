@@ -1,8 +1,8 @@
-# FevEventBackend
+# Val'EventBackend
 
 [![CI](https://github.com/JeremyTomasi/FevEventBackend/actions/workflows/gradle.yml/badge.svg?branch=develop)](https://github.com/JeremyTomasi/FevEventBackend/actions/workflows/gradle.yml)
 
-Ce repository sert à stocker la partie backend du projet Fev'Event réalisée par Jérémy Tomasi
+Ce repository sert à stocker la partie backend du projet Val'Event réalisée par Jérémy Tomasi
 et Esteban Chailland pour le projet de Licence 3 Informatique au sein de l'INSA Hauts-de-France
 et l'Université Polytechnique Hauts-de-France.
 

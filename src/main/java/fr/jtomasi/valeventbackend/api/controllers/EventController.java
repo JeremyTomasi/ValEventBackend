@@ -1,7 +1,7 @@
-package fr.jtomasi.feveventbackend.api.controllers;
+package fr.jtomasi.valeventbackend.api.controllers;
 
-import fr.jtomasi.feveventbackend.api.model.Event;
-import fr.jtomasi.feveventbackend.api.service.EventService;
+import fr.jtomasi.valeventbackend.api.model.Event;
+import fr.jtomasi.valeventbackend.api.service.EventService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

@@ -1,11 +1,11 @@
-package fr.jtomasi.feveventbackend;
+package fr.jtomasi.valeventbackend;
 
-import fr.jtomasi.feveventbackend.api.model.Asso;
-import fr.jtomasi.feveventbackend.api.model.Event;
-import fr.jtomasi.feveventbackend.api.repository.AssoRepository;
-import fr.jtomasi.feveventbackend.api.repository.EventRepository;
-import fr.jtomasi.feveventbackend.api.service.AssoService;
-import fr.jtomasi.feveventbackend.api.service.EventService;
+import fr.jtomasi.valeventbackend.api.model.Asso;
+import fr.jtomasi.valeventbackend.api.model.Event;
+import fr.jtomasi.valeventbackend.api.repository.AssoRepository;
+import fr.jtomasi.valeventbackend.api.repository.EventRepository;
+import fr.jtomasi.valeventbackend.api.service.AssoService;
+import fr.jtomasi.valeventbackend.api.service.EventService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
